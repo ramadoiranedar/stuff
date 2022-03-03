@@ -1,0 +1,63 @@
+.title:target {
+    background-color: lime;
+}
+
+.p1:target {
+    background-color: salmon;
+}
+
+.p2:target {
+    background-color: brown;
+}
+
+.p3:target {
+    background-color: deeppink;
+}
+
+.click-me:link {
+    color: pink;
+    font-size: large;
+}
+
+.click-me:hover {
+    color: hotpink;
+    font-size: larger;
+}
+
+.click-me:active {
+    color: deeppink;
+    font-size: x-large;
+}
+
+.click-me:visited {
+    color: black;
+    font-size: large;
+}
+
+/* ul.pseudo-class li:first-child a {
+    color: red;
+} */
+
+/* ul.pseudo-class li:last-child a {
+    color: red;
+} */
+
+/* ul.pseudo-class li:nth-child(2n - 1) a {
+    color: lime;
+} */
+
+ul.pseudo-class li:nth-child(odd) a {
+    color: lime;
+}
+
+ul.pseudo-class li:nth-child(even) a:hover {
+    color: green;
+}
+
+/* p:first-of-type {
+    color: aquamarine;
+} */
+
+/* p:last-of-type {
+    color: hotpink;
+} */

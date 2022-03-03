@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spread Operator</title>
+    <style>
+        body {
+            background-color: salmon;
+            text-align: center;
+        }
+
+        .name {
+            font-family: arial;
+            font-size: 80px;
+            color: white;
+            transition: .7s;
+        }
+        
+        .name span {
+            display: inline-block;
+            cursor: pointer;
+            transition: .3s;
+        }
+        
+        .name span:hover {
+            letter-spacing: 20px;
+            transform: scale(1.5);
+        }
+    </style>
+</head>
+<body>
+
+    <!-- <ul>
+        <li>Dendi</li>
+        <li>Richard</li>
+        <li>Monroe</li>
+    </ul> -->
+
+    <h1 class="name">DENDI PUDGE</h1>
+    <script>
+
+        // SPRED OPERATOR
+
+        // for split iterables to single element
+        // const student = ['Dendi', 'Reyna', 'Angel'];
+        // console.log(...student);
+
+        // for merge 2 array
+        // way 1
+        // const student = ['Dendi', 'Reyna', 'Angel'];
+        // const teacher = ['Melly', 'Sean', 'Jean'];
+        // const peoples = [...student, ...teacher];
+        // console.log(peoples);
+        
+        // way 2
+        // const student = ['Dendi', 'Reyna', 'Angel'];
+        // const teacher = ['Melly', 'Sean', 'Jean'];
+        // const peoples = student.concat(teacher);
+        // console.log(peoples);
+
+        // for copy array
+        // const student = ['Dendi', 'Reyna', 'Angel'];
+        // const student1 = [...student];
+        // console.log(student);
+        // console.log(student1);
+        // student1[0] = 'Damar';
+        // console.log('----------');
+        // console.log(student);
+        // console.log(student1);
+
+
+        // Old school
+        // const liStudent = document.querySelectorAll('li');
+        // console.log(liStudent);
+        // const student = [];
+        // for (let i = 0; i < liStudent.length; i++) {
+        //     student.push(liStudent[i].textContent);
+        // }
+        // console.log(student);
+
+        // New
+        // const liStudent = document.querySelectorAll('li');
+        // // console.log(liStudent);
+        // const student = [...liStudent].map(m => m.textContent);
+        // console.log(student);
+
+        const name = document.querySelector('.name');
+        const letters = [...name.textContent].map(letter => `${(letter === ' ') ? '<span style="color: transparent">z</span>' : '<span>' + letter + '</span>' }</span>`).join('');
+        console.log(letters);
+        name.innerHTML = letters;
+    </script>
+</body>
+</html>

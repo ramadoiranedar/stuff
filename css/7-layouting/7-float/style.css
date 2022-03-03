@@ -1,0 +1,26 @@
+.container {
+    width: 600px;
+    border: 1px solid black;
+    margin: 0 auto;
+    padding: 6px;
+}
+
+div.one,
+div.two,
+div.three {
+    width: 100px;
+    height: 100px;
+}
+
+.one {
+    background-color: salmon;
+}
+
+.two {
+    background-color: darkgreen;
+    float: right;
+}
+
+.three {
+    background-color: lightblue;
+}

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ELSE IF</title>
+</head>
+<body>
+    <script>
+        // CASE 1
+        // let number = prompt('Input Number:')
+        // let logMessage
+
+        // if ((number % 2) === 0) {
+        //     logMessage = number + ' is Even Number'
+        // } else if ((number % 2) == 1) {
+        //     logMessage = number + ' is Odd Number'
+        // } else {
+        //     logMessage = 'Wrong Input Number'
+        // }
+        // alert(logMessage)
+
+        // EXCERCISE 1
+        // let busNumber = 1
+        // let numberTotalBus = 10
+        // let totalBusGoodCondition = 6
+        // for (busNumber; busNumber <= numberTotalBus; busNumber++) {
+        //     // console.log(busNumber)
+        //     let logMessage = 'Bus Number - ' + busNumber
+        //     if (busNumber < numberTotalBus && busNumber <= totalBusGoodCondition) {
+        //         logMessage = logMessage + ' Can Operate'
+        //     } else if (busNumber == 8) {
+        //         logMessage = logMessage + ' Overtime'
+        //     } else {
+        //         logMessage = logMessage + ' Bad  Condition'
+        //     }
+        //     console.log(logMessage)
+        // }
+        
+        // EXCERCISE 2
+        // let busNumber = 1
+        // let numberTotalBus = 10
+        // let totalBusGoodCondition = 6
+        // for (busNumber; busNumber <= numberTotalBus; busNumber++) {
+        //     // console.log(busNumber)
+        //     let logMessage = 'Bus Number - ' + busNumber
+        //     if (busNumber < numberTotalBus && busNumber <= totalBusGoodCondition) {
+        //         logMessage = logMessage + ' Can Operate'
+        //     } else if (busNumber === 8 || busNumber === 10) {
+        //         logMessage = logMessage + ' Overtime'
+        //     } else {
+        //         logMessage = logMessage + ' Cannot operate'
+        //     }
+        //     console.log(logMessage)
+        // }
+
+        // EXCERCISE 3
+        let busNumber = 1
+        let numberTotalBus = 10
+        let totalBusGoodCondition = 6
+        for (busNumber; busNumber <= numberTotalBus; busNumber++) {
+            // console.log(busNumber)
+            let logMessage = 'Bus Number - ' + busNumber
+            if (busNumber < numberTotalBus && busNumber <= totalBusGoodCondition && busNumber !== 5) {
+                logMessage = logMessage + ' Can Operate'
+            } else if (busNumber === 5 || busNumber === 8 || busNumber === 10) {
+                logMessage = logMessage + ' Overtime'
+            } else {
+                logMessage = logMessage + ' Cannot operate'
+            }
+            console.log(logMessage)
+        }
+    </script>
+</body>
+</html>

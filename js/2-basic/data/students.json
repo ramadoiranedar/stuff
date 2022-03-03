@@ -1,0 +1,26 @@
+{ 
+    "students":
+    [
+        {
+            "id": "001",
+            "name": "Donny Ferdianto",
+            "email": "dony@dony.com",
+            "department": "Technical Information",
+            "lecturer": 1
+        },
+        {
+            "id": "002",
+            "name": "Andy go",
+            "email": "andygo@andy.com",
+            "department": "Technical Information",
+            "lecturer": 2
+        },
+        {
+            "id": "003",
+            "name": "Sordianto",
+            "email": "dony@dony.com",
+            "department": "Technical Information",
+            "lecturer": 1
+        }
+    ]
+}

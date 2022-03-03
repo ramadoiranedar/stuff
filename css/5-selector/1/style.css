@@ -1,0 +1,30 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+h1,
+h2 {
+    color: deeppink;
+}
+
+ul li a {
+    color: pink;
+    text-decoration: none;
+}
+
+ol li a {
+    color: palevioletred;
+    text-decoration: none;
+}
+
+p#p1 {
+    color: darkgoldenrod;
+}
+
+p.p2 {
+    color: darkorange;
+}
+
+.t-bold {
+    font-weight: bold;
+}

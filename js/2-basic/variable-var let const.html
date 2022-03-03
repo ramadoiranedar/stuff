@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VAR, LET, & CONSTS</title>
+</head>
+<body>
+    
+    <script>
+        // VAR
+
+        // by default is: Var i before initialization
+        i = 10;
+        console.log(i);
+
+        // Hoisting variable
+        // by default like this, and the result of j is undefined not error initialization
+        // var j;
+        // console.log(j);
+        // j = 10;
+        // for this case
+        console.log(j); // undefined
+        var j = 10;
+
+        // FUNCTION SCOPE 
+        // 1
+        function printLine() {
+            for (var y = 0; y < 10; y++) {
+                console.log(y);
+            }
+        }
+        printLine();
+        // console.log(y); // not defined, because y is in the block {} of function scope
+
+        // SELF INVOKING ANONYMOUS FUNCTION
+        // 2
+        (function () {
+            function printLine() {
+                for (var g = 0; g < 10; g++) {
+                    console.log(g);
+                }
+            }
+            printLine();
+        });
+        // console.log(g) // not defined, because g is in the block {} of function scope
+
+        // USING LET
+        // 3
+        for (let k = 0; k < 10; k++) {
+            console.log(k);
+        }
+        // console.log(k) // not defined, because k is in the block {} of function scope
+
+        // LET
+        // console.log(x) // default x is error before initialization
+        let x = 0;
+        // console.log(x) // default x is not error after initialization
+
+        // CONST 
+        // for minimalization state changing!
+        const p = 0;
+        // p = 1;
+        // console.log(p) // p is fixed cant assignment to constant after initialization
+
+        // if u want to assignment the constant variable
+        // OBJECT
+        const student = {
+            name: 'YOUR NAME',
+            age: 30
+        };
+        console.log(student);
+        student.name = 'MY NAME';
+        console.log(student);
+
+        // ARRAY
+        const arr = [1, 2, 3];
+        console.log(arr)
+        arr.push(4)
+        console.log(arr)
+        
+    </script>
+</body>
+</html>

@@ -1,0 +1,18 @@
+h1 {
+    text-transform: capitalize;
+}
+
+.p1 {
+    font-size: x-large;
+
+    /* color: darkcyan; */
+    /* color: #008b8b; */
+    /* color: rgb(0, 139, 139); */
+    color: rgba(0, 139, 139, .5);
+    text-align: center;
+    text-indent: none;
+    text-decoration: line-through;
+    text-transform: uppercase;
+    letter-spacing: 8px;
+    word-spacing: 20px;
+}

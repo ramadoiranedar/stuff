@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test Position</title>
+    <style>
+        body {
+            height: 2000px;
+        }
+        div {
+            width: 200px;
+            height: 200px;
+            margin: 0 auto;
+            position: absolute;
+        }
+
+        .overlay {
+            background-color: rgba(0, 0, 0, .8);
+            width: 100%;
+            height: 100%;
+            z-index: 9999;
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+        }
+
+        .container {
+            width: 600px;
+            height: 650px;
+        }
+
+        .one {
+            background-color: lightgreen;
+            z-index: 3;
+            left: 10px;
+            top: 100px;
+        }
+
+        .two {
+            background-color: violet;
+            z-index: 2;
+            left: 20px;
+            top: 200px;;
+        }
+
+        .three {
+            background-color: gold;
+            z-index: 1;
+            left: 30px;
+            top: 300px;
+        }
+    </style>
+</head>
+<body>
+    <div class="overlay"></div>
+    <div class="container">
+        <div class="one"></div>
+        <div class="two"></div>
+        <div class="three"></div>
+    </div>
+</body>
+</html>

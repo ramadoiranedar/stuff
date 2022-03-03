@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rest Parameter</title>
+</head>
+<body>
+    <script>
+        // REST PARAMETER
+
+        // sample 1
+        function myFunc1(a, b, ...myArgs) {
+            return `a = ${a}, b = ${b}, myArgs = ${myArgs}`;
+        }
+        function myFunc2(...myArgs) {
+            return myArgs;
+        }
+        function myFunc3() {
+            return Array.from(arguments);
+        }
+
+        console.log(myFunc1(1, 2, 3, 4, 5));
+        console.log(myFunc2(1, 2, 3, 4, 5));
+        console.log(myFunc3(1, 2, 3, 4, 5));
+
+        // sample 2
+        function countTotal(...numbers) {
+            // Old school
+            // let total = 0;
+            // for (const number of numbers) {
+            //     total += number;
+            // }
+            // return total;
+
+            // Reduce
+            return numbers.reduce((accumulator, currValue) => accumulator + currValue);
+        }
+        console.log(countTotal(1, 2, 3, 4, 5));
+
+        // sample array destructuring
+        const group1 = ['dendi', 'pulky', 'pahlevi', 'deddy', 'soni'];
+
+        // Old school
+        // const leader = group1[0];
+        // const member = group1[1];
+        // console.log(leader);
+        // console.log(member);
+
+        // new
+        const [leader, ...member] = group1;
+        console.log(leader);
+        console.log(member);
+
+        // sample object destructuring
+        const team = {
+            projectManager: 'Damar',
+            frontEnd1: 'Dendi',
+            frontEnd2: 'Rio',
+            backEnd: 'Benny',
+            ux: 'Vania',
+            devOps: 'Kevin'
+        }
+
+        const {projectManager, ...myTeam} = team;
+        console.log(projectManager);
+        console.log(myTeam);
+
+        // sample Filtering
+        function filterBy(type, ...values) {
+            return values.filter(value => (typeof value === type));
+        }
+
+        console.log(filterBy('string', 1, 2, 'Damar', false, 10, true, 'Donny'));
+        console.log(filterBy('number', 1, 2, 'Damar', false, 10, true, 'Donny'));
+
+    </script>
+</body>
+</html>

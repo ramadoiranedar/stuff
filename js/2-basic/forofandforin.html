@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>For of and For in</title>
+</head>
+<body>
+
+    <ul>
+        <li class="name">Dendy</li>
+        <li class="name">Topson</li>
+        <li class="name">Randy</li>
+    </ul>
+    <script>
+
+        // FOR OFF
+        // iterable
+        
+        // Array
+        // const myArr = [11, 22, 33];
+        // for (const a of myArr) {
+        //     console.log(a);
+        // }
+
+        // const myArr = [11, 22, 33];
+        // myArr.forEach((a, index) => {
+        //     console.log(`${a} is in index-${index} of array`);
+        // });
+
+        // for (const a of myArr.entries()) {
+        //     console.log(a);
+        // }
+
+        // for (const [index, a] of myArr.entries()) {
+        //     console.log(`${a} is in index-${index} of array`);
+        // }
+
+        // String
+        // const myStr = 'Konnichiwa';
+        // for (const n of myStr) {
+        //     console.log(n);
+        // }
+
+        // NodeList
+        const liName = document.querySelectorAll('.name');
+        // console.log(liName);
+
+        // liName.forEach(n => console.log(n.textContent));
+        // for (n of liName) {
+        //     console.log(n.textContent);
+        // }
+               
+        // arguments
+        // function countNumbers() {
+        //     console.log(arguments);
+        //     // return argument.reduce((a, i) => a + i);
+
+        //     let total = 0;
+        //     // arguments.forEach(a => total += a); // cant, will showing error forEach is not function
+        //     for (a of arguments) { // can, will showing
+        //         total += a;
+        //     }
+        //     return total;
+        // }
+        // console.log(countNumbers(1, 2, 3, 4, 5));
+
+        // FOR IN
+        // enumerable
+
+        // Object
+        const students = {
+            name: 'Dendi',
+            age: 33,
+        }
+
+        for (student in students) {
+            console.log(student[i]);
+        }
+    </script>
+</body>
+</html>

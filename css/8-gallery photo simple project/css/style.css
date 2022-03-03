@@ -1,0 +1,165 @@
+@font-face {
+    font-family: 'Roboto Regular';
+    src:
+        url('../fonts/Roboto/Roboto-Regular.ttf') format('trueType');
+}
+
+body {
+    font: 18px/36px 'Roboto Regular', Arial, serif;
+    background-color: #d7d7d7;
+}
+
+h1 {
+    font-size: 80px;
+    margin: 60px 0;
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: bolder;
+    text-shadow: 1px 4px 2px white;
+}
+
+.container {
+    width: 600px;
+    background-color: #fff;
+    margin: 0 auto;
+    padding: 20px;
+    box-shadow: 1px 1px 5px 2px rgba(0, 0, 0, .4);
+    border-radius: 4px;
+}
+
+.gallery li {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    margin-right: 20px;
+    /* overflow: hidden; */
+    border: 5px solid #ddd;
+
+    float: left;
+    position: relative;
+    transition: .4s;
+}
+
+.gallery li span {
+    display: block;
+    width: 120px;
+    height: 120px;
+    background-color: rgba(200, 200, 200, .5);
+
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.gallery li a img,
+.gallery li a span {
+    border-radius: 50%;
+    text-align: center;
+    line-height: 120px;
+    color: #ddd;
+    text-shadow: 1px 1px 1px #ddd;
+}
+
+.gallery li span {
+    opacity: 0;
+    transform: scale(0) rotate(0);
+    transition: .4s;
+}
+
+.gallery a:hover span {
+    opacity: 1;
+    transform: scale(1) rotate(360deg);
+    color: black;
+}
+
+.overlay {
+    width: 0;
+    height: 0;
+    overflow: hidden;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: rgba(0, 0, 0, .4);
+    z-index: 9999;
+    transition: .4s;
+    text-align: center;
+}
+
+.overlay:target {
+    width: auto;
+    height: auto;
+    bottom: 0;
+    right: 0;
+    background: rgba(0, 0, 0, .8);
+    padding: 100px;
+}
+
+.overlay:target img {
+    animation: zoomFade .7s;
+}
+
+.overlay img {
+    max-height: 100%;
+    box-shadow: 2px 2px 7px rgba(0, 0, 0, 0.6);
+}
+
+.overlay .close {
+    position: absolute;
+    width: 4%;
+    height: 4%;
+    padding-top: 1%;
+    top: 0;
+    right: 0;
+
+    color: #fff;
+    font-size: 32px;
+    text-decoration: none;
+    opacity: 0;
+    animation: fadeIn .5s .5s forwards;
+}
+
+@keyframes zoomFade {
+    0% {
+        transform: scale(0);
+        opacity: 0;
+    }
+
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: .1;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+.next,
+.prev {
+    width: 100px;
+    height: 100px;
+    text-decoration: none;
+    color: #fff;
+    font-size: 64px;
+    margin-left: 40px;
+    line-height: 100%;
+
+    position: absolute;
+    top: 45%;
+    opacity: 0;
+    animation: fadeIn .5s .5s forwards;
+}
+
+.prev {
+    margin-left: -200px;
+}
+
+div.clear {
+    clear: both;
+}

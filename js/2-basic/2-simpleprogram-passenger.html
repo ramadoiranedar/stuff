@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Program Passenger Bus</title>
+</head>
+<body>
+
+    <script>
+        let maxSeat = 15;
+        let arrPassengerBus = [];
+        // console.log('empty:')
+        // console.log(arrPassengerBus)
+
+        function addPassenger(passengerName, passengerNumberSeat) {
+
+            passengerName = passengerName
+            passengerNumberSeat = passengerNumberSeat - 1
+
+            if (passengerNumberSeat < 0) {
+                console.log('Seat is not in the bus')
+            } else {
+                if (passengerNumberSeat > arrPassengerBus.length && passengerNumberSeat <= maxSeat) {
+                    passengerNumberSeat = arrPassengerBus.length
+                }
+                
+                if (passengerNumberSeat >= maxSeat) {
+                    console.log('Seat is not in the bus')
+                } else {
+
+                    if (arrPassengerBus.length < 1) {
+                        arrPassengerBus[passengerNumberSeat] = passengerName
+                    } else {
+                        for (let i = 0; i < arrPassengerBus.length; i ++) {
+                            console.log(passengerName)
+                            console.log(arrPassengerBus[i])
+                            if (passengerName.toLowerCase() === arrPassengerBus[i].toLowerCase()) {
+                                console.log(passengerName + ' not allowed again to get on the bus.')
+                            } else {
+                                console.log(passengerName)
+                                console.log(arrPassengerBus[i])
+                                if (arrPassengerBus[passengerNumberSeat] !== undefined) {
+                                    console.log('The seat has a passenger.')
+                                    arrPassengerBus[arrPassengerBus.length + 1] = passengerName
+                                } else if (arrPassengerBus[passengerNumberSeat] === undefined) {
+                                    arrPassengerBus[i + 1] = passengerName
+                                }
+                            }
+
+                            
+                        }
+                    }
+                }
+                console.log(arrPassengerBus)
+            }
+        }
+
+        function dropPassenger(passengerName) {
+            arrPassengerBus.forEach(function(element, index) {
+                if (element.toLowerCase() === passengerName.toLowerCase()) {
+                    arrPassengerBus[index] = undefined
+                } else {
+                    console.log('Passenger is not on the list.')
+                }
+            })
+            console.log(arrPassengerBus)
+        }
+    </script>
+    
+</body>
+</html>

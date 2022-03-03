@@ -1,0 +1,153 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+
+    <title>PROMISE</title>
+  </head>
+  <body>
+
+    <div class="container">
+        <div class="row mt-5">
+            <div class="col">
+                <h1>Asynchronous Javascript - API OMDB</h1>
+            </div>
+        </div>
+
+        <div class="row container-movie">
+            
+        </div>
+    </div>
+
+
+    <!-- Optional JavaScript; choose one of the two! -->
+
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script>
+
+        // ASYNC AWAIT
+        
+        // Asynchronous Function
+
+        // 1
+        // const test = new Promise(resolve => resolve('end'));
+        // console.log(test);
+        // const test = new Promise(resolve => {
+        //     setTimeout(() => {
+        //         resolve('end');
+        //     }, 2000);
+        // });
+        // console.log(test); // PENDING
+
+        // 2
+        // test.then(() => console.log(test)); // NOT PENDING
+
+        // 3
+        // function testPromise() {
+        //     return new Promise(resolve => {
+        //         setTimeout(() => {
+        //             resolve('end');
+        //         }, 2000);
+        //     });
+        // }
+        // // wrong
+        // const test = testPromise();
+        // test.then(() => console.log(test));
+        // right
+        // async function testAsync() {
+        //     const test = await testPromise();
+        //     console.log(test);
+        // }
+        // testAsync();
+        
+        // 4 error handling then-catch
+        // function testPromise() {
+        //     return new Promise((resolve, reject) => {
+        //         const wait = 3000;
+        //         if (wait < 5000) {
+        //             setTimeout(() => {
+        //                 resolve('end');
+        //             }, wait);
+        //         } else {
+        //             reject('ERRORRR!!!!');
+        //         }
+        //     });
+        // }
+        // const test = testPromise();
+        // test
+        //     .then(test => console.log(test))
+        //     .catch(test => console.log(test));
+
+        // 5 error handying try-catch
+        function testPromise() {
+            return new Promise((resolve, reject) => {
+                const wait = 9000;
+                if (wait < 5000) {
+                    setTimeout(() => {
+                        resolve('end');
+                    }, wait);
+                } else {
+                    reject('ERRORRR!!!!');
+                }
+            });
+        }
+        async function testAsync() {
+            try {
+                const test = await testPromise();
+                console.log(test);
+            } catch(err) {
+                console.error(err);
+            }
+        }
+        testAsync();
+
+        // BETTER READING
+        // document.addEventListener('DOMContentLoaded', async function() {
+            // console.log('start');
+            // const movies = await getMovies();
+            // console.log(movies);
+            // updateUI(movies);
+            // console.log('end');
+        // });
+        // function getMovies() {
+        //     return fetch('http://www.omdbapi.com/?apikey=81bb8069&s=avenger')
+        //     .then(response => response.json())
+        //     .then(response => response.Search);
+        // }
+        // function updateUI(movies) {
+        //     let cards = '';
+        //     movies.forEach(movie => {
+        //         cards += `
+        //             <div class="col-md-4 my-3">
+        //                 <div class="card">
+        //                     <img src="${movie.Poster}" class="card-img-top" alt="...">
+        //                     <div class="card-body">
+        //                         <h5 class="card-title">${movie.Title}</h5>
+        //                         <h5 class="card-subtitle mb-2 text-mited">${movie.Year}</h5>
+        //                         <a href="#" class="btn btn-primary">See detail</a>
+        //                     </div>
+        //                 </div>
+        //             </div>
+        //         `;
+        //     });
+        //     $('.container-movie').html(cards);
+        // }
+
+        // EVENT BINDING
+        // using the document
+        // for element that doesn't existing
+        document.addEventListener('click', element => {
+            console.log(element);
+            const elementTarget = element.target;
+            console.log(elementTarget);
+        });
+    </script>
+</body>
+</html>

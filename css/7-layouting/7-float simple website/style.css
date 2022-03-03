@@ -1,0 +1,113 @@
+body {
+    background-color: #f7f7f7;
+    font: 16/28px arial, sans-serif;
+    background-image: url('img/pattern.png');
+}
+
+.container {
+    background-color: #fff;
+    width: 900px;
+    margin: 0 auto;
+}
+
+.header {
+    padding: 20px;
+    padding-bottom: 20px;
+}
+
+.header .title {
+    font-size: 40px;
+    font-weight: bold;
+}
+
+.header ul li {
+    display: inline-block;
+    margin-top: 20px;
+    margin-right: 10px;
+}
+
+.header h1 {
+    color: deeppink;
+}
+
+.header a {
+    text-decoration: none;
+    color: hotpink;
+}
+
+.header a:hover {
+    background-color: lightpink;
+    color: white;
+}
+
+.hero {
+    height: 340px;
+    background-image: url('img/dummy-hero.jpeg');
+    background-size: cover;
+    background-position: 0 -120px;
+    border-top: 5px solid lightpink;
+    border-bottom: 5px solid hotpink;
+}
+
+.content .main {
+    width: 600px;
+    padding: 20px;
+    box-sizing: border-box;
+    float: left;
+}
+
+.content .main h2 {
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.content .main .writer {
+    font-size: 12px;
+    margin-top: 10px;
+}
+
+.content .main .writer a {
+    color: hotpink;
+    text-decoration: none;
+}
+
+.content .main p {
+    margin-bottom: 20px;
+    font-size: 14px;
+    text-align: justify;
+}
+
+.content .sidebar {
+    width: 300px;
+    float: right;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+
+.content .sidebar img {
+    width: 80px;
+    height: 80px;
+    float: left;
+    padding-right: 10px;
+    margin: 4px;
+}
+
+.content .sidebar h3 {
+    font-weight: bold;
+    color: deeppink;
+    margin-bottom: 10px;
+}
+
+.content .sidebar p {
+    font: 14/24 Arial;
+    text-align: justify;
+}
+
+.content .sidebar .footer {
+    background-color: hotpink;
+    text-align: center;
+    font-size: 14px;
+    padding: 20px;
+    color: #fff;
+}

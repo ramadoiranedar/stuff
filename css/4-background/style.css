@@ -1,0 +1,9 @@
+body {
+    /* background-color: black;
+    background-image: url('img/pattern.png');
+    background-repeat: repeat-x;
+    background-position-x: top;
+    background-position-y: center; */
+
+    background: #000 url('img/pattern.png') top center repeat-x;
+}

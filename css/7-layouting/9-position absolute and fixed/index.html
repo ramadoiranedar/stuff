@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test Position</title>
+    <style>
+        body {
+            height: 2000px;
+        }
+        div {
+            width: 200px;
+            height: 200px;
+            margin: 0 auto;
+        }
+
+        .container {
+            width: 600px;
+            height: 650px;
+            border: 10px solid black;
+
+            position: relative;
+        }
+
+        .one {
+            background-color: lightgreen;
+        }
+
+        .two {
+            background-color: violet;
+            position: fixed;
+            top: 0;
+            left: 0;
+        }
+
+        .three {
+            background-color: gold;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="one"></div>
+        <div class="two"></div>
+        <div class="three"></div>
+    </div>
+</body>
+</html>

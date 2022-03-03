@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>HTML</title>
+    </head>
+    <body id="top">
+        <h1>HTML</h1>
+
+        <!-- HR Separator Line -->
+        <h2>SEPARATOR LINE</h2>
+        <hr>
+        
+        <!-- Heading -->
+        <h2 id="heading">Heading</h2>
+        <h1>Heading 1</h1>
+        <h2>Heading 2</h2>
+        <h3>Heading 3</h3>
+        <h4>Heading 4</h4>
+        <h5>Heading 5</h5>
+        <h6>Heading 6</h6>
+
+        <!-- Paragraph -->
+        <h2>Paragraph</h2>
+        <p>Line paragraph 1</p>
+        <p>Line paragraph 2</p>
+        
+        <!-- BREAK paragraph with emphasis -->
+        <h2>Emphasis</h2>
+        line 1 <strong>before</strong> <em>break</em>
+        <br>
+        line 2 <strong>after</strong> <em>break</em>
+    
+        <!-- Lists -->
+        <h2>Lists</h2>
+        <ol type="i">
+            <li>List order 1</li>
+            <li>List order 2</li>
+            <li>List order 3</li>
+        </ol>
+        <ul type="circle">
+            <li>List order 1</li>
+            <li>List order 2</li>
+            <li>List order 3</li>
+        </ul>
+
+        <!-- Definition List -->
+        <h2>Definition List</h2>
+        <dl>
+            <dt><strong>Lorem ipsum</strong></dt>
+            <dd>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequuntur, cupiditate.</dd>
+        </dl>
+
+        <!-- Hyperlink -->
+        <h2>Hyperlink</h2>
+        <!-- internal / relative url -->
+        <a href="index2.html">Go to index 2 Page</a>
+        <br>
+
+        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Suscipit atque nam reiciendis numquam animi eligendi assumenda, labore debitis hic. Sequi alias magni dolore quaerat aliquam dolor voluptates illum? Veniam repellendus maiores atque, sapiente quam voluptatem aut molestiae perspiciatis molestias? Perferendis praesentium veniam nostrum eius quibusdam consequatur ducimus dolores reiciendis adipisci cupiditate debitis aliquid ipsa, doloremque consectetur soluta est esse eum! Nihil obcaecati dignissimos rem aut perferendis natus eaque nam molestiae voluptatibus, illo dolorem in ratione. Animi ipsum incidunt accusantium? Maiores voluptatibus modi ipsam placeat quae possimus nostrum saepe, vel omnis voluptates dolor voluptate asperiores, velit beatae iure magni esse. Quasi.</p>
+
+        <!-- page anchor -->
+        <a href="#heading">Go to Heading</a>
+        <br>
+        <a href="#top">Go to Top</a>
+        <!-- external url -->
+        <br>
+        <a href="https://google.com" target="_blank">Go to Google</a>
+        <br>
+
+        <!-- Image -->
+        <h2>IMAGE</h2>
+        <img src="img/dummy.jpeg" alt="Oops..image errors" title="Dummy" width="100px">
+        <br>
+
+        <!-- Table -->
+        <h2>Table 1</h2>
+        <table border="1">
+            <thead>
+                <th></th>
+                <th>Column 1</th>
+                <th>Column 2</th>
+            </thead>
+            <tbody>
+                <tr>
+                    <th>Line 1</th>
+                    <td>Line 1, Column 1</td>
+                    <td>Line 1, Column 2</td>
+                </tr>
+                <tr>
+                    <th>Line 2</th>
+                    <td>Line 2, Column 1</td>
+                    <td>Line 2, Column 2</td>
+                </tr>
+            </tbody>
+        </table>
+        
+        <br>
+        
+        <h2>Table 2</h2>
+        <table border="1" cellspacing="0" cellpadding="10">
+            <tr>
+                <td>Line 1, Column 1</td>
+                <td>Line 1, Column 2</td>
+            </tr>
+            <tr>
+                <td>Line 2, Column 1</td>
+                <td>Line 2, Column 2</td>
+            </tr>
+        </table>
+        
+        <h2>Table 3</h2>
+        <table border="1" cellspacing="0" cellpadding="40">
+            <tr>
+                <td rowspan="3">Line 1, Column 1</td>
+                <td colspan="2">Line 1, Column 2</td>
+            </tr>
+            <tr>
+                <td>Line 2, Column 2</td>
+                <td>Line 2, Column 3</td>
+            </tr>
+            <tr>
+                <td>Line 3, Column 2</td>
+                <td>Line 3, Column 3</td>
+            </tr>
+        </table>
+        <br>
+        
+        <h2>Table 4</h2>
+        <table border="1" cellspacing="0" cellpadding="40">
+            <tr>
+                <td>Line 1, Column 1</td>
+                <td>Line 1, Column 2</td>
+                <td>Line 1, Column 3</td>
+                <td>Line 1, Column 4</td>
+            </tr>
+            <tr>
+                <td>Line 2, Column 1</td>
+                <td colspan="2" rowspan="2"></td>
+                <td>Line 2, Column 4</td>
+            </tr>
+            <tr>
+                <td>Line 3, Column 3</td>
+                <td>Line 3, Column 3</td>
+            </tr>
+            <tr>
+                <td>Line 1, Column 1</td>
+                <td>Line 1, Column 2</td>
+                <td>Line 1, Column 3</td>
+                <td>Line 1, Column 4</td>
+            </tr>
+        </table>
+        <br>
+        
+        <!--   Form -->
+        <h2>FORM</h2>
+        <form action="">
+            <label for="username">Username: </label>
+            <input type="text" id="username">
+            <br>
+
+            <label for="password">Password: </label>
+            <input type="password" id="password">
+            <br>
+            
+            <label for="password">Password: </label>
+            <input type="password" id="password">
+            <br>
+
+            <label for="gender">Gender: </label>
+            <label for="men">Men</label>
+            <input type="radio" name="gender" id="men">
+            <label for="women">Women</label>
+            <input type="radio" name="gender" id="women">
+            <br>
+
+            <label for="address">Address: </label>
+            <textarea name="address" id="address" cols="30" rows="10"></textarea>
+            <br>
+
+            <label for="roadmap">Roadmap</label>
+            <select name="roadmap" id="roadmap">
+                <option value="-">---Select Roadmap---</option>
+                <option value="frontend">FRONTEND DEVELOPER</option>
+                <option value="backend">BACKEND DEVELOPER</option>
+                <option value="devops">DEVOPS DEVELOPER</option>
+                <option value="fullstacks">FULLSTACKS DEVELOPER</option>
+            </select>
+            <br>
+
+            <label for="gender">Skills: </label>
+            <label for="html">html</label>
+            <input type="checkbox" name="skills" id="html">
+            <label for="css">css</label>
+            <input type="checkbox" name="skills" id="css">
+            <label for="bootstrap">bootstrap</label>
+            <input type="checkbox" name="skills" id="bootstrap">
+            <label for="other">other</label>
+            <input type="checkbox" name="skills" id="other">
+            <br>
+
+            <button type="button">Submit</button>
+        </form>
+
+    </body>
+</html>

@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ARROW FUNCTION</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .box {
+            width: 100px;
+            height: 100px;
+            border: 1px solid black;
+            margin: 50px auto;
+            transition: .3s width,
+                        .3s height .3s,
+                        .3s margin-top .3s,
+                        .1s background-color .3s;
+        }
+
+        .size {
+            width: 150px;
+            height: 150px;
+            margin-top: 25px;
+        }
+
+        .caption {
+            background-color: black;
+        }
+    </style>
+</head>
+<body>
+    <div class="box"></div>
+    <script>
+        // from 
+        //  const showData = function (name) {
+        //     return `Hello, ${name}`;
+        //  }
+        //  console.log(showData('Dani'));
+
+        // to
+        // 1
+        //  const showData = (name) => { return `Hello, ${name}` };
+        //  console.log(showData('Dendi'));
+
+        // 2
+        //  const showData = name => { return `Hello, ${name}` };
+        //  console.log(showData('Dendi'));
+         
+        // 3
+        //  const showData = (name, age) => { return `Hello, ${name}, your age is ${age}` };
+        //  console.log(showData('Dendi', 20));
+         
+        // 4 implicit return
+        //  const showData = (name, age) => `Hello, ${name}, your age is ${age}`;
+        //  console.log(showData('Dendi', 20));
+
+        // 5 without params 
+        //  const showData = () => 'Hello, Dendi, your age is 20';
+        //  console.log(showData());
+
+        // 6 map
+        // let students = ['Damir', 'Dendi', 'Dani'];
+        // let totalLetter = students.map(name => name.length);
+        // console.log(totalLetter);
+        
+        // 6 return object
+        // let students = ['Damir', 'Dendi', 'Dani'];
+        // let totalLetter = students.map(name => ({name: name, totalLetter: name.length}));
+        // console.log(totalLetter);
+        // console.table(totalLetter);
+
+        // 6 return object with the same param and key (eg: name)
+        // let students = ['Damir', 'Dendi', 'Dani'];
+        // let totalLetter = students.map(name => ({name, totalLetter: name.length}));
+        // console.log(totalLetter);
+        // console.table(totalLetter);
+
+        // THIS
+        // without arrow
+        // const Student = function () {
+        //     this.name = 'Damar';
+        //     this.age = 20;
+        //     this.sayHello = function () {
+        //         console.log(`Hello, my name is ${this.name}, and my age is ${this.age}`);
+        //     }
+        // }
+        // const damar = new Student();
+
+        // 1 with arrow
+        // const Student = function () {
+        //     this.name = 'Damar';
+        //     this.age = 20;
+        //     this.sayHello = () => {
+        //         console.log(`Hello, my name is ${this.name}, and my age is ${this.age}`);
+        //     }
+        // }
+        // const damar = new Student();
+
+        // 2 with arrow | ARROW FUNCTION DOESN'T HAVE CONCEPT THIS
+        // const students1 = {
+        //     name: 'Damar',
+        //     age: 20,
+        //     sayHello: () => {
+        //         // console.log(`Hello, my name is ${this.name}, and my age is ${this.age}`);
+        //         console.log(this)
+        //     }
+        // }
+
+        // 3 
+        // const Student = function () {
+        //     this.name = 'Damar';
+        //     this.age = 20;
+        //     this.sayHello = () => {
+        //         console.log(`Hello, my name is ${this.name}, and my age is ${this.age}`);
+        //     }
+
+        //     // this reference is GLOBAL
+        //     // setInterval(function() {
+        //         // console.log(this); // undefined
+        //         // console.log(this.age++);
+        //     // }, 500);
+
+        //     // this reference is LEXICAL SCOPE
+        //     setInterval(() => {
+        //         console.log(this); // not undefined
+        //         console.log(this.age++);
+        //     }, 500);
+        // }
+        // const damar = new Student();
+
+        // TEST CASE STYLE DIV BOX
+        const box = document.querySelector('.box');
+        box.addEventListener('click', function() {
+            let first = 'size',
+                second = 'caption';
+
+            if (this.classList.contains(first)) {
+                [first, second] = [second, first];
+            }
+
+            console.log(this)
+            this.classList.toggle('size');
+            setTimeout(() => {
+                this.classList.toggle('caption');
+                console.log(this)
+            }, 700);
+        });
+    </script>
+</body>
+</html>

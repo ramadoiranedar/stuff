@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Destructuring</title>
+</head>
+<body>
+    <script>
+        // DESTRUCTURING ASSIGMENT
+        // Array
+        // const myArr = ['one', 'two', 'three'];
+        // const [a, b, c] = myArr;
+        // console.log(a);
+        // console.log(b);
+        // console.log(c);
+
+        // Object
+        // const myObj = {
+        //     name: 'Dendi pudge',
+        //     age: 33,
+        //     email: 'dendipudge@mail.com'
+        // };
+        // const {name, age, email} = myObj;
+        // console.log(name);
+        // console.log(age);
+        // console.log(email);
+
+        // Swap Item
+        // let a = 10;
+        // let b = 20;
+        // [a, b] = [b, a];
+        // console.log(a);
+        // console.log(b);
+
+        // Rest Parameter
+        const [a, ...values] = [1, 2, 3, 4, 5];
+        console.log(a);
+        console.log(values);
+        console.log(values[0]);
+        console.log(values[1]);
+        console.log(values[2]);
+        console.log(values[3]);
+
+        // DESTRUCTURING FUNCTION
+
+        // IN ORDER & NOT IN ORDER
+        // in order 
+        // function count(a, b) {
+        //     return [a + b, a - b, a * b];
+        // }
+        // const [summation, substraction, multiplication, distribution = 0] = count(5, 2);
+        // console.log(summation);
+        // console.log(substraction);
+        // console.log(multiplication);
+        // console.log(distribution);
+
+        // not in order
+        // function count(a, b) {
+        //     return {
+        //         summation: a + b,
+        //         substraction: a - b,
+        //         multiplication: a * b,
+        //         distribution: a / b
+        //     };
+        // }
+        // const {multiplication, distribution, summation, substraction} = count(5, 2);
+        // console.log(summation);
+        // console.log(multiplication);
+        // console.log(substraction);
+        // console.log(distribution);
+
+        // FUNCTION ARGUMENTS
+
+        // const student1 = {
+        //     name: 'Dendi Pudge',
+        //     age: 23,
+        //     email: 'dendipudge@mail.com',
+        //     value: {
+        //         a: 100,
+        //         b: 90,
+        //         c: 95
+        //     }
+        // }
+
+        // without destructuring
+        // function printStudent(student) {
+        //     return `Hello, my name is ${name}, my age is ${age}`;
+        // }
+
+        // with destructuring
+        // function printStudent({name, age, value : {a, b, c}}) {
+        //     return `Hello, my name is ${name}, my age is ${age}. And i have point a value is ${a}`;
+        // }
+        // console.log(printStudent(student1));
+
+    </script>
+</body>
+</html>

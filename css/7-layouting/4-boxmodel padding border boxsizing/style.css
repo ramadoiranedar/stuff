@@ -1,0 +1,29 @@
+/* div {
+    width: 300px;
+    height: 300px;
+    background-color: pink;
+    margin: 20px auto;
+
+    padding: 40px;
+    border-left: 8px dotted deeppink;
+    border-right: 8px double deeppink;
+}
+ */
+
+div {
+    width: 600px;
+    margin: 20px auto;
+    box-sizing: border-box;
+}
+
+.one {
+    background-color: deeppink;
+    padding: 10px;
+    border: 5px dotted pink;
+}
+
+.two {
+    background-color: deepskyblue;
+    padding: 30px;
+    border: 10px dashed lightblue;
+}

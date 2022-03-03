@@ -1,0 +1,177 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+
+    <title>PROMISE</title>
+  </head>
+  <body>
+
+    <div class="container">
+        <div class="row mt-5">
+            <div class="col">
+                <h1>Asynchronous Javascript - API OMDB</h1>
+            </div>
+        </div>
+
+        <div class="row container-movie">
+            
+        </div>
+    </div>
+
+
+    <!-- Optional JavaScript; choose one of the two! -->
+
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script>
+
+        // PROMISE
+        // Object of success/fail States Asynchronous event in the future
+        // States fulfilled/rejected/pending
+        // callback(resolve/reject/finally)
+        // action (then/catch/)
+
+        // 1
+        // let found = true;
+        // const promise1 = new Promise((resolve, reject) => {
+        //     if (found) { // resolve
+        //         resolve('OK FOUND');
+        //     } else { //reject
+        //         reject('NOT OK');
+        //     }
+        // });
+
+        // console.log('start');
+        // promise1
+        //     .then(responseResolve => console.log('OK FOUND : ' + responseResolve))
+        //     .catch(responseReject => console.log('NOT OK : ' + responseReject));
+        // console.log('end');
+
+        // 2
+        // let found = true;
+        // const timeOut = 5000;
+        // const promise2 = new Promise((resolve, reject) => {
+        //     if (found) { // resolve
+        //         setTimeout(() => resolve('OK FOUND and Wait a Timeout ' + timeOut), timeOut);
+        //     } else { //reject
+        //         setTimeout(() => reject('NOT OK and Wait a Timeout ' + timeOut), timeOut);
+        //     }
+        // });
+
+        // console.log('start');
+        // promise2
+        //     .finally(() => console.log('Finally!!!'))
+        //     .then(responseResolve => console.log('OK FOUND : ' + responseResolve))
+        //     .catch(responseReject => console.log('NOT OK : ' + responseReject));
+        // console.log('end');
+
+        // 3
+        // let found = true;
+        // const timeOut = 2000;
+        // const promise3 = new Promise((resolve, reject) => {
+        //     if (found) { // resolve
+        //         setTimeout(() => resolve('Promies3 OK FOUND and Wait a Timeout ' + timeOut), timeOut);
+        //     } else { //reject
+        //         setTimeout(() => reject('Promise3 NOT OK and Wait a Timeout ' + timeOut), timeOut);
+        //     }
+        // });
+        // const promise4 = new Promise((resolve, reject) => {
+        //     if (found) { // resolve
+        //         setTimeout(() => resolve('Promise4 OK FOUND and Wait a Timeout ' + timeOut), timeOut);
+        //     } else { //reject
+        //         setTimeout(() => reject('Promise4 NOT OK and Wait a Timeout ' + timeOut), timeOut);
+        //     }
+        // });
+
+        // console.log('start');
+        // Promise.all([promise3, promise4])
+        //     // .then(response => console.log(response))
+        //     .then(response => {
+        //         const [promise3, promise4] = response;
+        //         console.log(promise3);
+        //         console.log(promise4);
+        //     })
+        // console.log('end');
+
+        // FETCH
+        // const movies = fetch('http://www.omdbapi.com/?apikey=81bb8069&s=avenger');
+        // console.log(movies);
+
+        // fetch('http://www.omdbapi.com/?apikey=81bb8069&s=avenger')
+        //     .then(response => response.json())
+        //     .then(results => console.log(results));
+
+        // TRICKY READING
+        // console.log('start');
+        // fetch('http://www.omdbapi.com/?apikey=81bb8069&s=avenger')
+        //     .then(response => {
+        //         console.log(response); // PROMISE
+        //         return response.json();
+        //     })
+        //     .then(response => {
+        //         console.log(response); // OBJECT
+        //         let movies = response.Search;
+        //         console.log(movies);
+        //         let cards = '';
+        //         movies.forEach(movie => {
+        //             cards += `
+        //                 <div class="col-md-4 my-3">
+        //                     <div class="card">
+        //                         <img src="${movie.Poster}" class="card-img-top" alt="...">
+        //                         <div class="card-body">
+        //                             <h5 class="card-title">${movie.Title}</h5>
+        //                             <h5 class="card-subtitle mb-2 text-mited">${movie.Year}</h5>
+        //                             <a href="#" class="btn btn-primary">See detail</a>
+        //                         </div>
+        //                     </div>
+        //                 </div>
+        //             `;
+        //         });
+        //         $('.container-movie').html(cards);
+        //     })
+        //     .catch( err => console.log(err.responseText) );
+        // console.log('end');
+
+        // BETTER READING
+        document.addEventListener('DOMContentLoaded', async function() {
+            console.log('start');
+            const movies = await getMovies();
+            console.log(movies);
+            updateUI(movies);
+            console.log('end');
+        });
+
+        function getMovies() {
+            return fetch('http://www.omdbapi.com/?apikey=81bb8069&s=avenger')
+            .then(response => response.json())
+            .then(response => response.Search);
+        }
+
+        function updateUI(movies) {
+            let cards = '';
+            movies.forEach(movie => {
+                cards += `
+                    <div class="col-md-4 my-3">
+                        <div class="card">
+                            <img src="${movie.Poster}" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <h5 class="card-title">${movie.Title}</h5>
+                                <h5 class="card-subtitle mb-2 text-mited">${movie.Year}</h5>
+                                <a href="#" class="btn btn-primary">See detail</a>
+                            </div>
+                        </div>
+                    </div>
+                `;
+            });
+            $('.container-movie').html(cards);
+        }
+    </script>
+</body>
+</html>

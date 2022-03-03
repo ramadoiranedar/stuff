@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OBJECT</title>
+</head>
+<body>
+    
+    <script>
+    /*
+        // 1
+        // EMPTY OBJECT
+        let obj1 = {}
+
+        // SET OBJECT
+        obj1.name = 'YOUR NAME'
+        obj1.gender = 'YOUR GENDER'
+        obj1.age = 'YOUR AGE'
+        obj1.address = [
+                {
+                    country: "YOUR COUNTRY",
+                    address_now: "YOUR ADDRESS NOW",
+                    city: 'YOUR CITY',
+                    postal_code : 'YOUR POSTAL CODE',
+                },
+                {
+                    country: "YOUR COUNTRY",
+                    address_idcard: "YOUR ADDRESS ID CARD",
+                    city: 'YOUR CITY',
+                    postal_code : 'YOUR POSTAL CODE',
+                },
+        ]
+        console.log(obj1)
+
+        // 2
+        let obj2 =         {
+            name: 'YOUR NAME',
+            gender: 'YOUR GENDER',
+            age: 'YOUR AGE',
+            address: [
+                {
+                    country: "YOUR COUNTRY",
+                    address_now: "YOUR ADDRESS NOW",
+                    city: 'YOUR CITY',
+                    postal_code : 'YOUR POSTAL CODE',
+                },
+                {
+                    country: "YOUR COUNTRY",
+                    address_idcard: "YOUR ADDRESS ID CARD",
+                    city: 'YOUR CITY',
+                    postal_code : 'YOUR POSTAL CODE',
+                },
+            ]
+        }
+        console.log(obj2)
+
+        // literal
+        let student1 = {
+            id: "1",
+            name: "YOUR NAME",
+            email: "email@email.com",
+            study: "Technical Information"
+        }
+        let student2 = {
+            id: "2",
+            name: "YOUR NAME",
+            email: "email@email.com",
+            study: "Technical Industry"
+        }
+        console.log(student1)
+        console.log(student2)
+
+
+        // function declaration
+        function createObjectStudent(id, name, email, study) {
+            let student = {}
+            student.id = id
+            student.name = name
+            student.email = email
+            student.study = study
+            return student
+        }
+
+        let student3 = createObjectStudent('3', 'YOUR NAME', 'email@email.com', 'Technical Nuclear');
+        console.log(student3)
+
+        // constructor
+        function Student(id, name, email, study) {
+            this.id = id
+            this.name = name
+            this.email = email
+            this.study = study
+        }
+
+        let student4 = new Student('4', 'YOUR NAME', 'email@email.com', 'Technical Machine')
+        console.log(student4)
+
+        // THIS
+        // context object global window
+        console.log(this)
+        console.log(window === this)
+        let str = 'MY STRING'
+        console.log(this.str)
+
+        // context object global window
+        function hello() {
+            console.log(this)
+            console.log('Hello!')
+        }
+        this.hello();
+
+        // context object concerned
+        let obj = {num: 10, name: 'John'}
+        obj.hello = function () {
+            console.log(this)
+            console.log('Hello!')
+        }
+        obj.hello();
+
+        // context constructor
+        function Hello() {
+            console.log(this)
+            console.log('Hello!')
+        }
+        let obj4 = new Hello()
+        let obj5 = new Hello()
+
+        console.log(obj4)
+        console.log(obj5)
+
+
+    function Bus(driver, route, passenger, cash) { // OBJECT
+        // naik turun
+        // PROPERTY
+        this.driver = driver
+        this.route = route
+        this.passenger = passenger
+        this.cash = cash
+
+        // METHODS
+        this.getPassenger = function(passengerName) {
+            this.passenger.push(passengerName)
+            return this.passenger
+        }
+
+        this.dropPassenger = function(passengerName, paymentCash) {
+            if (this.passenger.length === 0) {
+                alert('Bus Passenger is Empty')
+                return false
+            }
+
+            for (let i = 0; i < this.passenger.length; i++) {
+                if (this.passenger[i] == passengerName) {
+                    this.passenger[i] = undefined
+                    this.cash += paymentCash
+                    return this.passenger
+                }
+            }
+        }
+    }
+
+    let bus1 = new Bus('Dimas Anggoro', ['Kp.Rambutan', 'BLOK M', 'Lb.Bulus'], [], 0)
+    let bus2 = new Bus('Jeffrey Dian', ['SENEN', 'Pulo Gadung'], [], 0)
+
+    */
+
+    // 1.OBJECT LITERAL
+    // let people1 = {
+    //     name: "YOUR  NAME",
+    //     energy: 10,
+    //     eat: function(portion) {
+    //         this.energy = this.energy + portion;
+    //         console.log(`Hello ${this.name}, enjoy your meal.`);
+    //     }
+    // }
+    // let people2 = {
+    //     name: "YOUR  NAME",
+    //     energy: 10,
+    //     eat: function(portion) {
+    //         this.energy = this.energy + portion;
+    //         console.log(`Hello ${this.name}, enjoy your meal.`);
+    //     }
+    // }
+
+    // 2.OBJECT FUNCTION DECLARATION
+
+    // 1
+    // not efficient memory still duplicate property while not used
+    // function People(name, energy) {
+    //     let people = {};
+    //     people.name = name;
+    //     people.energy = energy;
+
+    //     people.eat = function(portion) {
+    //         this.energy += portion;
+    //         console.log(`Hello ${this.name}, enjoy your meal.`);
+    //     }
+
+    //     people.playGame = function(timeHour) {
+    //         this.energy -= timeHour;
+    //         console.log(`Hello ${this.name}, have fun.`);
+    //     }
+    //     return people;
+    // }
+
+    // 2
+    // more efficient memory, no duplicate propert while not used
+    // function People(name, energy) {
+    //     let people = Object.create(methodPeople);
+    //     people.name = name;
+    //     people.energy = energy;
+
+    //     return people;
+    // }
+    // const methodPeople = {
+    //     eat: function(portion) {
+    //         this.energy += portion;
+    //         console.log(`Hello ${this.name}, enjoy your meal.`);
+    //     },
+    //     playGame: function(timeHour) {
+    //         this.energy -= timeHour;
+    //         console.log(`Hello ${this.name}, have fun.`);
+    //     },
+    //     sleep: function(timeHour) {
+    //         this.energy += timeHour * 2;
+    //         console.log(`Hello ${this.name}, sleep.`);
+    //     },
+    // }
+
+    // let damar = People('ARIO DAMAR', 100);
+    // let randy = People('RANDY SULLIVAN', 100);
+
+    // 3
+    // using Prototype default for more efficient memory, no duplicate propert while not used
+    // function People(name, energy) {
+    //     this.name = name;
+    //     this.energy = energy;
+    // }
+
+    // People.prototype.eat = function(portion) {
+    //     this.energy += portion;
+    //     console.log(`Hello ${this.name}, enjoy your meal.`);
+    // };
+
+    // People.prototype.playGame = function(timeHour) {
+    //     this.energy -= timeHour;
+    //     console.log(`Hello ${this.name}, have fun.`);
+    // };
+
+    // People.prototype.sleep = function(timeHour) {
+    //     this.energy += timeHour * 2;
+    //     console.log(`Hello ${this.name}, sleep.`);
+    // };
+
+    // let damar = new People('damar', 100)
+    // console.log(damar);
+
+    // 3
+    // with CLASS
+    class People {
+        constructor(name, energy) {
+            this.name = name;
+            this.energy = energy;
+        }
+
+        eat(portion) {
+            this.energy += portion;
+            console.log(`Hello ${this.name}, enjoy your meal.`);
+        };
+
+        playGame(timeHour) {
+            this.energy -= timeHour;
+            console.log(`Hello ${this.name}, have fun.`);
+        };
+
+        sleep(timeHour) {
+            this.energy += timeHour * 2;
+            console.log(`Hello ${this.name}, sleep.`);
+        };
+    }
+    let damar = new People('damar', 100)
+
+
+    // 3.OBJECT CONSTRUCTUR FUNCTION
+    // function People(name, energy) {
+    //     this.name = name;
+    //     this.energy = energy;
+
+    //     this.eat = function(portion) {
+    //         this.energy += portion;
+    //         console.log(`Hello ${this.name}, enjoy your meal.`);
+    //     }
+
+    //     this.playGame = function(timeHour) {
+    //         this.energy -= timeHour;
+    //         console.log(`Hello ${this.name}, have fun.`);
+    //     }
+    // }
+
+    // let dendi = new People('DENDI PUDGE', 100);
+    // let putro = new People('PUTRO SPIRIT', 100);
+
+    </script>
+</body>
+</html>

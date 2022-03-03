@@ -1,0 +1,18 @@
+.one {
+    width: 200px;
+    height: 200px;
+    background-color: lime;
+    margin: 40px auto 40px auto;
+}
+
+.two {
+    width: 100px;
+    height: 100px;
+    background-color: lemonchiffon;
+}
+
+.three {
+    width: 50px;
+    height: 50px;
+    background-color: yellow;
+}

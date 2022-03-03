@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HIGHER ORDER FUNCTION</title>
+</head>
+<body>
+    <script>
+        // HIGHER ORDER FUNCTION
+        //-main function
+        //-callback function
+
+        // 1
+        // function callback1 () {
+        //     console.log('THIS CALLBACK 1')
+        // }
+        // setTimeout(callback, 500);
+
+        // 2
+        // function callback2 () {
+        //     console.log('THIS CALLBACK 2')
+        // }
+        // document.addEventListener('click', callback);
+
+        const numbers = [-1, 8, 9, 1, 4, -5, -4, 3, 2, 9];
+        // using for
+        // FIND VALUES IN ARRAY >= 3
+        // const newNumbers = [];
+        // for (let i = 0; i < numbers.length; i++) {
+        //     if (numbers[i] >= 3) {
+        //         newNumbers.push(numbers[i]);
+        //     }
+        // }
+        // console.log(newNumbers);
+
+        // using filter
+        // FIND VALUES IN ARRAY >= 3
+        // const newNumbers = numbers.filter(number => number >= 3);
+        // console.log(newNumbers);
+
+        // using map
+        // COUNT current Numer * 2
+        // const newNumbers = numbers.map(number => number * 2);
+        // console.log(newNumbers);
+
+        // using reduce
+        // COUNT total every current number
+        // const theFirstValue = 10;
+        // const newNumbers = numbers.reduce((accumulator, currentVal) => accumulator + currentVal, theFirstValue);
+        // console.log(newNumbers);
+
+        // CHAINING METHOD
+        // FIND Number > 5 and * 3, then count total
+        const theFirstValue = 0;
+        const result = numbers.filter(number => number > 5) // 8, 9, 9
+                                .map(number => number * 3) // 8*3, 9*3, 9*3
+                                .reduce((accumulator, currentVal) => accumulator + currentVal, theFirstValue);
+        console.log(result);
+    </script>
+</body>
+</html>

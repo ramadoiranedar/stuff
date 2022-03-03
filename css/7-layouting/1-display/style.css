@@ -1,0 +1,18 @@
+/* .navigation {
+    background-color: hotpink;
+} */
+
+.navigation a {
+    display: inline-block;
+    width: max-content;
+    height: max-content;
+    padding: 10px;
+}
+
+/* .main {
+    background-color: lime;
+} */
+
+.main img {
+    width: 200px;
+}

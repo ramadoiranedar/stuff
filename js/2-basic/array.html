@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ARRAY</title>
+</head>
+
+<body>
+
+    <script>
+        // NUMERIC / INDEX
+
+        // declare
+        let arr1 = [1, 2, 3, 4, 5]
+        let arr2 = [1, '2', '3', 5]
+        let arr3 = [1, '2', [3, 4, 5]]
+        function myFunc() {
+            return [4, 5];
+        }
+        let arr4 = [[1, 2, 3], myFunc]
+
+        // selecting value array specified
+        console.log(arr1[1])
+        console.log(arr2[2])
+        console.log(arr3[2][2])
+        console.log(arr4[1][0])
+        
+        // show listing value array using loop
+        for (let i = 0; i <= arr1.length - 1; i++) {
+            console.log(arr1[i]);
+        }
+
+        // change value array
+        arr1[0] = 9
+        arr2[2] = 2
+        arr3[2][2] = 6
+        arr4[1] = [4, 5]
+
+        // delete value array
+        arr1[0] = undefined
+        arr2[2] = undefined
+        arr3[2] = undefined
+        arr4[1] = undefined
+
+        // several method for array
+        console.log(arr1.length)
+        console.log(arr1.join('-'))
+
+        arr1.push('6')
+
+        arr1.pop()
+        arr1.pop()
+
+        arr1.unshift(0)
+
+        arr1.shift()
+        arr1.shift()
+
+        arr2.splice(2, 0, 100, '200')
+
+        arr3.slice(1, 2)
+
+        // foreach
+        let cars = ['Rolls Royce', 'Ferarri', 'Lamborghini', 'BMW', 'Toyota', 'Daihatsu', 'Ford', 'Suzuki']
+
+        for (i = 0; i < cars.length; i ++) {
+            console.log(cars[i])
+        }
+
+        // 1
+        cars.forEach(function(element, index) {
+            console.log(element)
+        })
+
+        // 2
+        let printCars = function (element) {
+            console.log(element)
+        }
+
+        cars.forEach(printCars)
+
+        // map
+        let numbers1 = [1, 2, 5, 3, 6, 8, 4]
+        let numbers2 = numbers1.map(function(element) {
+            return element * 2
+        })
+        console.log(numbers2.join(' - '))
+
+        // sort
+        let numbers1 = [1, 2, 5, 3, 6, 8, 4]
+        console.log(numbers1.join(' - '))
+        numbers1.sort()
+        console.log(numbers1.join(' - '))
+        
+        let numbers2 = [1, 2, 10, 5, 20, 3, 6, 8, 4]
+        console.log(numbers2.join(' - '))
+        numbers2.sort(function(a, b) {
+            return a - b;
+        })
+        console.log(numbers2.join(' - '))
+        
+        // filter
+        let numbers4 = [1, 2, 10, 5, 20, 3, 6, 8, 4]
+        let numbers5 = numbers4.filter(function(target) {
+            // return target === 20
+            return target < 10
+        })
+        console.log(numbers5.join(' - ')) // array
+        
+        // find
+        let numbers6 = [1, 2, 10, 5, 20, 3, 6, 8, 4]
+        let numbers7 = numbers6.find(function(target) {
+            // return target === 20
+            return target < 10
+        })
+        console.log(numbers7) // not array
+        
+    </script>
+</body>
+
+</html>

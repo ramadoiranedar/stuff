@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SWITCH</title>
+</head>
+<body>
+    <script>
+        // CASE 1
+        // let inputNumber = prompt('Input Number:')
+        // let number = parseInt(inputNumber);
+
+        // let str = 'Your input number is '
+        // switch (number) {
+        //     case 1 :
+        //         let outputStr = str + number
+        //         alert(outputStr)
+        //         break;
+        //     case 2 :
+        //         let outputStr = str + number
+        //         alert(outputStr)
+        //         break;
+        //     case 3 :
+        //         let outputStr = str + number
+        //         alert(outputStr)
+        //         break;
+        //     default :inputNumber
+        //         let outputStr = str + number
+        //         alert(outputStr)
+        //         break;
+        // }
+
+        // CASE 2
+        let selectedMenu = 'Welcome to the PizzaHOT\n'
+        selectedMenu += '--Pizza--\n'
+        selectedMenu += '1.CHICKEN PUFF\n'
+        selectedMenu += '2.PEPPERONI\n'
+        selectedMenu += '3.AMERICAN FAVOURITE\n'
+        selectedMenu += '4.SUPER SUPREME\n'
+        selectedMenu += '5.MEAT LOVERS\n'
+        selectedMenu += 'Select Menu Number (eg. 1):\n'
+        let inputNumber = prompt(selectedMenu)
+        let number = parseInt(inputNumber);
+
+        let str = 'Your input number is '
+        switch (number) {
+            case 1 :
+            case 2 :
+            case 5 :
+                if (number === 1) {
+                    let outputStr = 'PIZZA "CHICKEN PUFF" SOLD!'
+                } else if (number === 2) {
+                    let outputStr = 'PIZZA "PEPPERONI" SOLD!'
+                } else {
+                    let outputStr = 'PIZZA "MEAT LOVERS" SOLD!'
+                }
+                alert(outputStr)
+                break;
+            case 3 :
+                let outputStr = 'AMERICAN FAVOURITE IN STOCK!'
+                alert(outputStr)
+                break;
+            case 4 :
+                let outputStr = 'SUPER SUPREME IN STOCK!'
+                alert(outputStr)
+                break;
+            default :
+                let outputStr = 'Oopss.. WRONG MENU NUMBER'
+                alert(outputStr)
+                break;
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IF ELSE</title>
+</head>
+<body>
+    <script>
+        // CASE 1
+        // for (let i = 1; i <= 5; i++) {
+        //     let logMessage = 'Loop - ' + i
+        //     console.log(logMessage)
+        // }
+
+        // EXCERCISE
+        let busNumber = 1
+        let numberTotalBus = 10
+        let totalBusGoodCondition = 6
+        for (busNumber; busNumber <= numberTotalBus; busNumber++) {
+            if (busNumber > totalBusGoodCondition) {
+                let logMessage = 'Bus Number - ' + busNumber + ' is Bad  Condition'
+            } else {
+                let logMessage = 'Bus Number - ' + busNumber + ' is Can Operate'
+            }
+            console.log(logMessage)
+        }
+    </script>
+</body>
+</html>

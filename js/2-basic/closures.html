@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CLOSURES</title>
+</head>
+<body>
+    <script>
+        // EXECUTION CONTEXT, HOISTING & SCOPE
+
+        // console.log(myName);
+        // var myName =  'my name';
+        // console.log(myName);
+
+        // creation phase pada Global Context
+
+        // name var = undefined
+        // name function = fn()
+        // hoisting
+        // window = global object
+        // this = window
+
+        // execution phase
+
+        // console.log(sayHello())
+        // var name = 'my name';
+        // var age = 33
+        // function sayHello() {
+        //     return `Hello, my name is ${name} and my age is ${age}`;
+        // }
+        // console.log(sayHello())
+
+        // function create local execution Context
+        // in the creation and execution phase
+        // window
+        // arguments
+        // hoisting
+
+        // https://pythontutor.com/javascript.html#mode=display
+        // var name = 'my name';
+        // var username = '@username';
+
+        // function printUrl(username) {
+        //     var url = 'https://facebook.com/';
+        //     return url += username;
+        // }
+
+        // console.log(printUrl(username));
+
+
+        // Closures 
+        // 1
+        // function init() {
+        //     let name = 'My Name';
+        //     function showName() {
+        //         console.log(name)
+        //     }
+        //     showName();
+        // }
+        // init();
+        // console.dir(init);
+
+        // 2
+        // function greeting(time) {
+        //     return function (name) {
+        //         console.log(`Hello ${name}, Good ${time}. Good Luck, Have fun!`);
+        //     }
+        // }
+        // let morning = greeting('Morning');
+        // let evening = greeting('Evening');
+        // let night = greeting('Night');
+        // morning('Damar');
+        // morning('Dendi');
+        // morning('Dani');
+        // console.dir(morning);
+
+        // 3
+        // way 1
+        // let add = function () {
+        //     let counter = 0;
+        //     return function() {
+        //         return ++ counter;
+        //     }
+        // };
+        // let a = add();
+        // console.log(a());
+        // console.log(a());
+        // console.log(a());
+
+        // way 2 efficient
+        let add = (function () {
+            let counter = 0;
+            return function() {
+                return ++ counter;
+            }
+        })();
+        console.log(add());
+        console.log(add());
+        console.log(add());
+        console.log(add());
+
+ 
+    </script>
+</body>
+</html>

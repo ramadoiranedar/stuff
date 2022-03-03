@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TEMPLATE LITERALS STRING </title>
+</head>
+<body>
+    <script>
+        const name = 'Dendi Pudge';
+        let age = 30;
+
+        // basic
+        console.log(`Hello my name is ${name}, my age is ${age}.`);
+
+        // embedded expression
+        console.log(`Hello my age after 10 years is ${age + 10}.`);
+        console.log(`Hello my age after 10 years is ${age} ${(age % 2 === 0) ? '(Even)' : '(Odd)' }.`);
+
+        // multiline
+        console.log(`
+            Hello my name is ${name},
+            Hello my age after 10 year is ${age + 10}
+        `);
+
+        // html fragments
+        const divCard = `
+            <div class="card" style="width: 18rem;">
+                <div class="card-body">
+                    <h5 class="card-title">${name}</h5>
+                    <p class="card-text">Hello my age after 10 years is ${age} ${(age % 2 === 0) ? '(Even)' : '(Odd)' }.</p>
+                    <a href="#" class="btn btn-primary">Go somewhere</a>
+                </div>
+            </div>
+        `;
+        const element = document.getElementsByTagName('body')[0];
+        // console.log(element);
+        element.innerHTML = divCard;
+
+        // tagged templates
+        function test(strings, ...values) {
+            return [strings, values];
+        }
+
+        const str = test`Hello my name is ${name}, my age is ${age}.`;
+        console.log(str);
+
+    </script>
+</body>
+</html>

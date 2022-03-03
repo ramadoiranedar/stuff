@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Game - Rock,Paper,Scissors</title>
+</head>
+<body>
+
+    <script>
+        function resultSimpleGame(gameStatus, userRPS, compRPS) {
+            let strNicknameUser = 'Yours'
+            let strNicknameComputer = 'Computer'
+            let strSeparatorNickname = ': '
+            let strVersus = ' ~VS~ '
+
+            let strWin = '---WIN---'
+            let strLose = '---LOSE---'
+            let strDraw = '---DRAW---'
+
+            if (userRPS === 1) {
+                strUserRPS = 'ROCK' 
+            } else if (userRPS === 2) {
+                strUserRPS = 'PAPER' 
+            } else if (userRPS === 3) {
+                strUserRPS = 'SCISSORS' 
+            }
+
+            if (compRPS === 1) {
+                strCompRPS = 'ROCK' 
+            } else if (compRPS === 2) {
+                strCompRPS = 'PAPER' 
+            } else if (compRPS === 3) {
+                strCompRPS = 'SCISSORS' 
+            }
+            
+            resultRPS +=  strNicknameUser + strSeparatorNickname + strUserRPS + '\n'
+            resultRPS += strNicknameComputer + strSeparatorNickname + strCompRPS + '\n'
+            resultRPS += strUserRPS + strVersus + strCompRPS + '\n'
+            
+            gameStatus = gameStatus.toLowerCase()
+
+            if (gameStatus === 'win') {
+                resultRPS += strWin
+            } else if (gameStatus === 'lose') {
+                resultRPS += strLose
+            } else {
+                resultRPS += strDraw
+            }
+        }
+
+        let play = true
+        while (play) {
+            let userPlay = confirm('Do you wanna play ROCK,PAPER,SCISSORS?');
+            // console.log(userPlay)
+            if (userPlay) {
+                let info = '--WELCOME TO ROCK,PAPER,SCISSORS--\n'
+                info += '1.ROCK\n' // ROCK
+                info += '2.PAPER\n' // PAPER
+                info += '3.SCISSORS\n' // SCISSORS
+                info += 'Select Your Number of Menu for ROCK PAPER SCISSORS:\n'
+                let userRPS = parseInt(prompt(info));
+                let mathRandom = Math.floor((Math.random() * 3) + 1) // return random number between 1 and 3
+                let compRPS = mathRandom
+                // console.log (compRPS)
+
+                if (userRPS < 1 || userRPS > 3) {
+                    alert('Oops...Wrong Number Menu')
+                } else {
+
+                    let resultRPS = ''
+
+                    if (userRPS === 1 && compRPS === 1) {
+                        resultSimpleGame('draw', userRPS, compRPS)
+                    } else if (userRPS === 1 && compRPS === 2) {
+                        resultSimpleGame('lose', userRPS, compRPS)
+                    } else if (userRPS === 1 && compRPS === 3) {
+                        resultSimpleGame('win', userRPS, compRPS)
+                    } else if (userRPS === 2 && compRPS === 1) {
+                        resultSimpleGame('win', userRPS, compRPS)
+                    } else if (userRPS === 2 && compRPS === 2) {
+                        resultSimpleGame('draw', userRPS, compRPS)
+                    } else if (userRPS === 2 && compRPS === 3) {
+                        resultSimpleGame('lose', userRPS, compRPS)
+                    } else if (userRPS === 3 && compRPS === 1) {
+                        resultSimpleGame('lose', userRPS, compRPS)
+                    } else if (userRPS === 3 && compRPS === 2) {
+                        resultSimpleGame('win', userRPS, compRPS)
+                    } else if (userRPS === 3 && compRPS === 3) {
+                        resultSimpleGame('draw', userRPS, compRPS)
+                    }
+
+                    alert(resultRPS);
+
+                }
+
+            } else {
+                play = false
+                alert('OK for close the game. Thank You!')
+            }
+        }
+    </script>
+    
+</body>
+</html>
