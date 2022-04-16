@@ -1,0 +1,52 @@
+<div class="container my-3">
+    <div class="row">
+        <div class="col-md-8">
+            <h2>List of contact</h2>
+
+            <a href="/contact/add" class="btn btn-primary mt-5 mb-2">Add New Contact</a>
+
+            <% if (msg.length > 0) { %>
+                <div class="alert alert-success" role="alert">
+                    <%= msg %>
+                </div>
+            <% } %>
+
+            <table class="table my-2">
+                <thead>
+                    <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">Name</th>
+                        <th scope="col">Phone</th>
+                        <th scope="col">Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <% if (contacts.length < 1) { %>
+                        <tr>
+                            <td colspan="4">
+                                <div class="alert alert-danger text-center" role="alert">
+                                    Oops.. Contact is empty.</a>
+                                </div>
+                            </td>
+                        </tr>
+                    <% } else { %>
+                        <% contacts.forEach((contact, index) => { %>
+                        
+                            <tr>
+                                <th scope="row"><%= index + 1 %> </th>
+                                <td><%= contact.name %> </td>
+                                <td><%= contact.phone %> </td>
+                                <td>
+                                    <a href="/contact/<%= contact.email %> " class="btn btn-success badge rounded-pill"><i class="bi bi-info-circle-fill"></i> Detail</a>
+                                </td>
+                            </tr>
+
+                        <% }) %>
+
+                    <% } %>
+
+                </tbody>
+            </table>    
+        </div>
+    </div>
+</div>

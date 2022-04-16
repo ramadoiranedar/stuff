@@ -1,0 +1,19 @@
+{
+  "type": "module",
+  "name": "3-node-package-manager",
+  "version": "1.0.0",
+  "description": "NodeJS Stuff",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app",
+    "dev": "ls",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Ario Damar",
+  "license": "ISC",
+  "dependencies": {
+    "chalk": "^5.0.0",
+    "nodemon": "^2.0.15",
+    "validator": "^13.7.0"
+  }
+}

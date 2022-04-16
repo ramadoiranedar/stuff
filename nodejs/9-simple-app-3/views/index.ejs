@@ -1,0 +1,11 @@
+<h1>Index Pages</h1>
+<% if (students.length < 1) { %>
+    <h4>Student Data is Empty</h4>
+<% } else { %>
+    <% students.forEach(student => { %>
+        <ul>
+            <li>ID: <%= student.id %> </li>
+            <li>Email: <%= student.name %> </li>
+        </ul>
+    <% }) %>
+<% } %>

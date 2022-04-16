@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test</title>
+</head>
+<body>
+    <script>
+        // Single thread, Asynchronous
+        
+        const getUserAsync = (id, callback) => {
+            const time = id === 1 ? 3000 : 1000;
+            setTimeout(() => {
+                const name = id === 1 ? 'Dendi' : 'Miracle';
+                callback({id, name});
+            }, time);
+        }
+
+        const user1 = getUserAsync(1, (result) => console.log(result));
+
+        const user2 = getUserAsync(2, (result) => console.log(result));
+
+        const hello = 'hello world!';
+        console.log(hello);
+        
+    </script>
+</body>
+</html>
